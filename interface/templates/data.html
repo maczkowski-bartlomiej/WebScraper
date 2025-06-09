@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dane Skanowania</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(to bottom, #e9ecef, #f8f9fa);
+            margin: 0;
+            padding: 30px;
+            color: #2d3436;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(90deg, #007BFF, #00b4d8);
+            padding: 15px;
+            border-radius: 8px;
+            margin: -25px -25px 25px;
+        }
+        .scan-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .scan-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        .scan-item h2 {
+            margin: 0 0 15px;
+            color: #007BFF;
+            font-size: 1.5em;
+        }
+        .scan-item p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .tag-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        .tag-table th, .tag-table td {
+            padding: 12px;
+            border: 1px solid #e9ecef;
+            text-align: left;
+        }
+        .tag-table th {
+            background: #f1f3f5;
+            color: #495057;
+        }
+        .tag-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dane Skanowania dla ID zadania: {{ task_id }}</h1>
+        {% for item in data %}
+            <div class="scan-item">
+                <h2>{{ item.url }}</h2>
+                <p><strong>Tytuł strony:</strong> {{ item.page_title }}</p>
+                <p><strong>E-maile:</strong> {{ item.emails | join(', ') or 'Brak' }}</p>
+                <p><strong>Liczba linków wewnętrznych:</strong> {{ item.internal_links }}</p>
+                <p><strong>Struktura organizacyjna:</strong> {{ item.org_structure | join(', ') or 'Brak' }}</p>
+                <p><strong>Liczba tagów HTML:</strong></p>
+                <table class="tag-table">
+                    <tr>
+                        <th>Tag</th>
+                        <th>Liczba</th>
+                    </tr>
+                    {% for tag, count in item.tag_counts.items() %}
+                        <tr>
+                            <td>{{ tag }}</td>
+                            <td>{{ count }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
