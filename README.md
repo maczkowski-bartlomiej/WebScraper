@@ -1,93 +1,174 @@
-# 馃寪 Webscraper - Skaner Stron Internetowych 馃殌
+🌐 Webscraper - Skaner Stron Internetowych 🚀
 
-Projekt przygotowany na uczelnie.
+Projekt przygotowany na uczelnie
 
-## 馃搵 Opis projektu
+📋 Opis projektu
 
-**Webscraper** to narz臋dzie umo偶liwiaj膮ce u偶ytkownikom skanowanie stron internetowych w celu pozyskania kluczowych danych, takich jak tytu艂y stron, adresy e-mail, liczba link贸w wewn臋trznych, struktura organizacyjna czy statystyki tag贸w HTML. Aplikacja sk艂ada si臋 z trzech g艂贸wnych modu艂贸w: interfejsu u偶ytkownika, silnika skanowania oraz bazy danych, kt贸re wsp贸艂dzia艂aj膮 w harmonijny spos贸b. 馃洜锔?
-## 鉁?G艂贸wne funkcjonalno艣ci
+Webscraper to narzędzie umożliwiające użytkownikom skanowanie stron internetowych w celu pozyskania kluczowych danych, takich jak tytuły stron, adresy e-mail, liczba linków wewnętrznych, struktura organizacyjna czy statystyki tagów HTML. Aplikacja składa się z trzech głównych modułów: interfejsu użytkownika, silnika skanowania oraz bazy danych, które współdziałają w harmonijny sposób. 🛠️
 
-- **Wprowadzanie adres贸w URL** 馃摑: U偶ytkownik mo偶e wprowadzi膰 list臋 adres贸w URL (oddzielonych przecinkami) za pomoc膮 intuicyjnego interfejsu.
-- **Asynchroniczne skanowanie** 鈿? Szybkie i wydajne przetwarzanie wielu stron dzi臋ki asynchronicznym 偶膮daniom HTTP.
-- **Przegl膮danie wynik贸w** 馃搳: Dane wy艣wietlane w czytelnej formie tabelarycznej, zawieraj膮cej szczeg贸艂y ka偶dej zeskanowanej witryny.
-- **Trwa艂e przechowywanie danych** 馃捑: Wyniki zapisywane w bazie MongoDB, co umo偶liwia ich p贸藕niejsze wykorzystanie.
+✨ Główne funkcjonalności
 
-## 馃З Struktura projektu
 
-Projekt zosta艂 podzielony na trzy modu艂y, z kt贸rych ka偶dy pe艂ni unikaln膮 rol臋:
 
-- **webscraper-interface** 馃枼锔? Interfejs u偶ytkownika oparty na frameworku Flask. Umo偶liwia wprowadzanie adres贸w URL i przegl膮danie wynik贸w w przejrzystej formie.
-- **webscraper-engine** 馃攳: Silnik skanowania oparty na FastAPI. Odpowiada za asynchroniczne pobieranie i analiz臋 stron przy u偶yciu bibliotek BeautifulSoup i aiohttp.
-- **mongo** 馃梽锔? Modu艂 integracji z baz膮 danych MongoDB, wykorzystuj膮cy asynchroniczny sterownik `motor` do przechowywania i pobierania danych.
 
-## 馃搱 Zbierane dane
 
-Aplikacja gromadzi nast臋puj膮ce informacje z ka偶dej zeskanowanej strony:
+Wprowadzanie adresów URL 📝: Użytkownik może wprowadzić listę adresów URL (oddzielonych przecinkami) za pomocą intuicyjnego interfejsu.
 
-- **Tytu艂 strony** 馃摐: Pobierany z tagu `<title>`.
-- **Adresy e-mail** 鉁夛笍: Wyodr臋bniane za pomoc膮 wyra偶e艅 regularnych.
-- **Liczba link贸w wewn臋trznych** 馃敆: Zliczane na podstawie odno艣nik贸w w obr臋bie tej samej domeny.
-- **Struktura organizacyjna** 馃搼: Okre艣lana na podstawie nag艂贸wk贸w (`<h1>`, `<h2>`, `<h3>`).
-- **Liczba tag贸w HTML** 馃彿锔? Statystyki wyst膮pie艅 poszczeg贸lnych tag贸w w kodzie strony.
 
-## 馃洜锔?U偶yte technologie
 
-Projekt opiera si臋 na nowoczesnym stosie technologicznym:
+Asynchroniczne skanowanie ⚡: Szybkie i wydajne przetwarzanie wielu stron dzięki asynchronicznym żądaniom HTTP.
 
-- **Python** 馃悕: J臋zyk programowania zapewniaj膮cy czytelno艣膰 i elastyczno艣膰.
-- **Flask** 馃寪: Lekki framework webowy do tworzenia interfejsu u偶ytkownika.
-- **FastAPI** 馃殌: Asynchroniczny framework do budowy wydajnego API.
-- **BeautifulSoup** 馃Ч: Biblioteka do parsowania kodu HTML.
-- **aiohttp** 馃實: Asynchroniczne 偶膮dania HTTP dla szybkiego pobierania stron.
-- **MongoDB** 馃梼锔? NoSQL-owa baza danych do przechowywania wynik贸w.
-- **motor** 馃攲: Asynchroniczny sterownik dla MongoDB.
-- **Docker** 馃惓: Konteneryzacja zapewniaj膮ca sp贸jne 艣rodowisko uruchomieniowe.
 
-## 馃彈锔?Architektura
 
-Aplikacja dzia艂a w oparciu o architektur臋 klient-serwer:
-- **Interfejs** (Flask) komunikuje si臋 z **silnikiem** (FastAPI) poprzez RESTful API.
-- **Silnik** przetwarza 偶膮dania, skanuje strony i zapisuje wyniki do bazy **MongoDB**.
-- **Docker** zapewnia izolacj臋 i 艂atwe uruchamianie wszystkich komponent贸w w sieci `scraper-network`.
+Przeglądanie wyników 📊: Dane wyświetlane w czytelnej formie tabelarycznej, zawierającej szczegóły każdej zeskanowanej witryny.
 
-## 馃殌 Jak uruchomi膰?
 
-1. **Sklonuj repozytorium**:
-   ```bash
-   git clone https://github.com/<twoje-nazwa-uzytkownika>/webscraper.git
-   cd webscraper
-   ```
 
-2. **Uruchom za pomoc膮 Docker Compose**:
-   ```bash
-   docker-compose up --build
-   ```
+Trwałe przechowywanie danych 💾: Wyniki zapisywane w bazie MongoDB, co umożliwia ich późniejsze wykorzystanie.
 
-3. **Otw贸rz przegl膮dark臋** i przejd藕 na adres:
-   ```
-   http://localhost:5000
-   ```
+🧩 Struktura projektu
 
-4. Wprowad藕 adresy URL, kliknij "Skanuj" i przegl膮daj wyniki! 馃帀
+Projekt został podzielony na trzy moduły, z których każdy pełni unikalną rolę:
 
-## 馃搨 Struktura katalog贸w
 
-```plaintext
+
+
+
+webscraper-interface 🖥️: Interfejs użytkownika oparty na frameworku Flask. Umożliwia wprowadzanie adresów URL i przeglądanie wyników w przejrzystej formie.
+
+
+
+webscraper-engine 🔍: Silnik skanowania oparty na FastAPI. Odpowiada za asynchroniczne pobieranie i analizę stron przy użyciu bibliotek BeautifulSoup i aiohttp.
+
+
+
+mongo 🗄️: Moduł integracji z bazą danych MongoDB, wykorzystujący asynchroniczny sterownik motor do przechowywania i pobierania danych.
+
+📈 Zbierane dane
+
+Aplikacja gromadzi następujące informacje z każdej zeskanowanej strony:
+
+
+
+
+
+Tytuł strony 📜: Pobierany z tagu <title>.
+
+
+
+Adresy e-mail ✉️: Wyodrębniane za pomocą wyrażeń regularnych.
+
+
+
+Liczba linków wewnętrznych 🔗: Zliczane na podstawie odnośników w obrębie tej samej domeny.
+
+
+
+Struktura organizacyjna 📑: Określana na podstawie nagłówków (<h1>, <h2>, <h3>).
+
+
+
+Liczba tagów HTML 🏷️: Statystyki wystąpień poszczególnych tagów w kodzie strony.
+
+🛠️ Użyte technologie
+
+Projekt opiera się na nowoczesnym stosie technologicznym:
+
+
+
+
+
+Python 🐍: Język programowania zapewniający czytelność i elastyczność.
+
+
+
+Flask 🌐: Lekki framework webowy do tworzenia interfejsu użytkownika.
+
+
+
+FastAPI 🚀: Asynchroniczny framework do budowy wydajnego API.
+
+
+
+BeautifulSoup 🧹: Biblioteka do parsowania kodu HTML.
+
+
+
+aiohttp 🌍: Asynchroniczne żądania HTTP dla szybkiego pobierania stron.
+
+
+
+MongoDB 🗃️: NoSQL-owa baza danych do przechowywania wyników.
+
+
+
+motor 🔌: Asynchroniczny sterownik dla MongoDB.
+
+
+
+Docker 🐳: Konteneryzacja zapewniająca spójne środowisko uruchomieniowe.
+
+🏗️ Architektura
+
+Aplikacja działa w oparciu o architekturę klient-serwer:
+
+
+
+
+
+Interfejs (Flask) komunikuje się z silnikiem (FastAPI) poprzez RESTful API.
+
+
+
+Silnik przetwarza żądania, skanuje strony i zapisuje wyniki do bazy MongoDB.
+
+
+
+Docker zapewnia izolację i łatwe uruchamianie wszystkich komponentów w sieci scraper-network.
+
+🚀 Jak uruchomić?
+
+
+
+
+
+Sklonuj repozytorium:
+
+git clone https://github.com/<twoje-nazwa-uzytkownika>/webscraper.git
+cd webscraper
+
+
+
+Uruchom za pomocą Docker Compose:
+
+docker-compose up --build
+
+
+
+Otwórz przeglądarkę i przejdź na adres:
+
+http://localhost:5000
+
+
+
+Wprowadź adresy URL, kliknij "Skanuj" i przeglądaj wyniki! 🎉
+
+📂 Struktura katalogów
+
 webscraper/
-鈹溾攢鈹€ interface/          # Kod modu艂u interfejsu (Flask)
-鈹溾攢鈹€ engine/            # Kod modu艂u silnika (FastAPI)
-鈹溾攢鈹€ docker-compose.yml  # Konfiguracja Dockera
-鈹斺攢鈹€ README.md          # Ten plik
-```
+├── interface/          # Kod modułu interfejsu (Flask)
+├── engine/            # Kod modułu silnika (FastAPI)
+├── docker-compose.yml  # Konfiguracja Dockera
+└── README.md          # Ten plik
 
-## 馃 Jak mog臋 pom贸c?
+🤝 Jak mogę pomóc?
 
-Chcesz doda膰 now膮 funkcj臋 lub zg艂osi膰 b艂膮d? 馃挕 Otw贸rz **issue** lub wy艣lij **pull request**! Wszelkie uwagi i sugestie s膮 mile widziane. 馃槉
+Chcesz dodać nową funkcję lub zgłosić błąd? 💡 Otwórz issue lub wyślij pull request! Wszelkie uwagi i sugestie są mile widziane. 😊
 
-## 馃摐 Licencja
+📜 Licencja
 
-Projekt jest dost臋pny na licencji MIT. Szczeg贸艂y znajdziesz w pliku `LICENSE`.
+Projekt jest dostępny na licencji MIT. Szczegóły znajdziesz w pliku LICENSE.
 
----
 
-**Webscraper** to idealne narz臋dzie dla ka偶dego, kto chce szybko i efektywnie analizowa膰 strony internetowe. Do艂膮cz do nas i odkryj moc web scrapingu! 馃専
+
+Webscraper to idealne narzędzie dla każdego, kto chce szybko i efektywnie analizować strony internetowe. Dołącz do nas i odkryj moc web scrapingu! 🌟
