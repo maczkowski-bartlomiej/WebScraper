@@ -1,55 +1,55 @@
-# ğŸŒ Webscraper - Skaner Stron Internetowych ğŸš€
+# ?? Webscraper - Skaner Stron Internetowych ??
 
 Projekt przygotowany na uczelnie.
 
-## ğŸ“‹ Opis projektu
+## ?? Opis projektu
 
-Webscraper to narzÄ™dzie umoÅ¼liwiajÄ…ce uÅ¼ytkownikom skanowanie stron internetowych w celu pozyskania kluczowych danych, takich jak tytuÅ‚y stron, adresy e-mail, liczba linkÃ³w wewnÄ™trznych, struktura organizacyjna czy statystyki tagÃ³w HTML. Aplikacja skÅ‚ada siÄ™ z trzech gÅ‚Ã³wnych moduÅ‚Ã³w: interfejsu uÅ¼ytkownika, silnika skanowania oraz bazy danych, ktÃ³re wspÃ³Å‚dziaÅ‚ajÄ… w harmonijny sposÃ³b. ğŸ› ï¸
+Webscraper to narz?dzie umo?liwiaj?ce u?ytkownikom skanowanie stron internetowych w celu pozyskania kluczowych danych, takich jak tytu?y stron, adresy e-mail, liczba link¨®w wewn?trznych, struktura organizacyjna czy statystyki tag¨®w HTML. Aplikacja sk?ada si? z trzech g?¨®wnych modu?¨®w: interfejsu u?ytkownika, silnika skanowania oraz bazy danych, kt¨®re wsp¨®?dzia?aj? w harmonijny spos¨®b. ???
 
-## âœ¨ GÅ‚Ã³wne funkcjonalnoÅ›ci
+## ? G?¨®wne funkcjonalno?ci
 
-- **Wprowadzanie adresÃ³w URL ğŸ“:** UÅ¼ytkownik moÅ¼e wprowadziÄ‡ listÄ™ adresÃ³w URL (oddzielonych przecinkami) za pomocÄ… intuicyjnego interfejsu.
-- **Asynchroniczne skanowanie âš¡:** Szybkie i wydajne przetwarzanie wielu stron dziÄ™ki asynchronicznym Å¼Ä…daniom HTTP.
-- **PrzeglÄ…danie wynikÃ³w ğŸ“Š:** Dane wyÅ›wietlane w czytelnej formie tabelarycznej, zawierajÄ…cej szczegÃ³Å‚y kaÅ¼dej zeskanowanej witryny.
-- **TrwaÅ‚e przechowywanie danych ğŸ’¾:** Wyniki zapisywane w bazie MongoDB, co umoÅ¼liwia ich pÃ³Åºniejsze wykorzystanie.
+- **Wprowadzanie adres¨®w URL ??:** U?ytkownik mo?e wprowadzi? list? adres¨®w URL (oddzielonych przecinkami) za pomoc? intuicyjnego interfejsu.
+- **Asynchroniczne skanowanie ?:** Szybkie i wydajne przetwarzanie wielu stron dzi?ki asynchronicznym ??daniom HTTP.
+- **Przegl?danie wynik¨®w ??:** Dane wy?wietlane w czytelnej formie tabelarycznej, zawieraj?cej szczeg¨®?y ka?dej zeskanowanej witryny.
+- **Trwa?e przechowywanie danych ??:** Wyniki zapisywane w bazie MongoDB, co umo?liwia ich p¨®?niejsze wykorzystanie.
 
-## ğŸ§© Struktura projektu
+## ?? Struktura projektu
 
-Projekt zostaÅ‚ podzielony na trzy moduÅ‚y:
+Projekt zosta? podzielony na trzy modu?y:
 
-- **webscraper-interface ğŸ–¥ï¸:** Interfejs uÅ¼ytkownika oparty na frameworku Flask. UmoÅ¼liwia wprowadzanie adresÃ³w URL i przeglÄ…danie wynikÃ³w w przejrzystej formie.
-- **webscraper-engine ğŸ”:** Silnik skanowania oparty na FastAPI. Odpowiada za asynchroniczne pobieranie i analizÄ™ stron przy uÅ¼yciu bibliotek BeautifulSoup i aiohttp.
-- **mongo ğŸ—„ï¸:** ModuÅ‚ integracji z bazÄ… danych MongoDB, wykorzystujÄ…cy asynchroniczny sterownik motor do przechowywania i pobierania danych.
+- **webscraper-interface ???:** Interfejs u?ytkownika oparty na frameworku Flask. Umo?liwia wprowadzanie adres¨®w URL i przegl?danie wynik¨®w w przejrzystej formie.
+- **webscraper-engine ??:** Silnik skanowania oparty na FastAPI. Odpowiada za asynchroniczne pobieranie i analiz? stron przy u?yciu bibliotek BeautifulSoup i aiohttp.
+- **mongo ???:** Modu? integracji z baz? danych MongoDB, wykorzystuj?cy asynchroniczny sterownik motor do przechowywania i pobierania danych.
 
-## ğŸ“ˆ Zbierane dane
+## ?? Zbierane dane
 
-Aplikacja gromadzi nastÄ™pujÄ…ce informacje z kaÅ¼dej zeskanowanej strony:
+Aplikacja gromadzi nast?puj?ce informacje z ka?dej zeskanowanej strony:
 
-- **TytuÅ‚ strony ğŸ“œ:** Pobierany z tagu <title>.
-- **Adresy e-mail âœ‰ï¸:** WyodrÄ™bniane za pomocÄ… wyraÅ¼eÅ„ regularnych.
-- **Liczba linkÃ³w wewnÄ™trznych ğŸ”—:** Zliczane na podstawie odnoÅ›nikÃ³w w obrÄ™bie tej samej domeny.
-- **Struktura organizacyjna ğŸ“‘:** OkreÅ›lana na podstawie nagÅ‚Ã³wkÃ³w (<h1>, <h2>, <h3>).
-- **Liczba tagÃ³w HTML ğŸ·ï¸:** Statystyki wystÄ…pieÅ„ poszczegÃ³lnych tagÃ³w w kodzie strony.
+- **Tytu? strony ??:** Pobierany z tagu <title>.
+- **Adresy e-mail ??:** Wyodr?bniane za pomoc? wyra?e¨½ regularnych.
+- **Liczba link¨®w wewn?trznych ??:** Zliczane na podstawie odno?nik¨®w w obr?bie tej samej domeny.
+- **Struktura organizacyjna ??:** Okre?lana na podstawie nag?¨®wk¨®w.
+- **Liczba tag¨®w HTML ???:** Statystyki wyst?pie¨½ poszczeg¨®lnych tag¨®w w kodzie strony.
 
-## ğŸ› ï¸ UÅ¼yte technologie
+## ??? U?yte technologie
 
-- **Python:** JÄ™zyk programowania zapewniajÄ…cy czytelnoÅ›Ä‡ i elastycznoÅ›Ä‡.
-- **Flask:** Lekki framework webowy do tworzenia interfejsu uÅ¼ytkownika.
+- **Python:** J?zyk programowania zapewniaj?cy czytelno?? i elastyczno??.
+- **Flask:** Lekki framework webowy do tworzenia interfejsu u?ytkownika.
 - **FastAPI:** Asynchroniczny framework do budowy wydajnego API.
 - **BeautifulSoup:** Biblioteka do parsowania kodu HTML.
-- **aiohttp:** Asynchroniczne Å¼Ä…dania HTTP dla szybkiego pobierania stron.
-- **MongoDB:** NoSQL-owa baza danych do przechowywania wynikÃ³w.
+- **aiohttp:** Asynchroniczne ??dania HTTP dla szybkiego pobierania stron.
+- **MongoDB:** NoSQL-owa baza danych do przechowywania wynik¨®w.
 - **motor:** Asynchroniczny sterownik dla MongoDB.
-- **Docker:** Konteneryzacja zapewniajÄ…ca spÃ³jne Å›rodowisko uruchomieniowe.
+- **Docker:** Konteneryzacja zapewniaj?ca sp¨®jne ?rodowisko uruchomieniowe.
 
-## ğŸ—ï¸ Architektura
+## ??? Architektura
 
-Aplikacja dziaÅ‚a w oparciu o architekturÄ™ klient-serwer:
-- **Interfejs** (Flask) komunikuje siÄ™ z silnikiem (FastAPI) poprzez RESTful API.
-- **Silnik** przetwarza Å¼Ä…dania, skanuje strony i zapisuje wyniki do bazy MongoDB.
-- **Docker** zapewnia izolacjÄ™ i Å‚atwe uruchamianie wszystkich komponentÃ³w w sieci scraper-network.
+Aplikacja dzia?a w oparciu o architektur? klient-serwer:
+- **Interfejs** (Flask) komunikuje si? z silnikiem (FastAPI) poprzez RESTful API.
+- **Silnik** przetwarza ??dania, skanuje strony i zapisuje wyniki do bazy MongoDB.
+- **Docker** zapewnia izolacj? i ?atwe uruchamianie wszystkich komponent¨®w w sieci scraper-network.
 
-ğŸš€ Jak uruchomiÄ‡?
+?? Jak uruchomi??
 
 1. **Sklonuj repozytorium**:
    ```bash
@@ -57,21 +57,21 @@ Aplikacja dziaÅ‚a w oparciu o architekturÄ™ klient-serwer:
    cd webscraper
    ```
 
-2. **Uruchom za pomocÄ… Docker Compose**:
+2. **Uruchom za pomoc? Docker Compose**:
    ```bash
    docker-compose up --build
    ```
 
-3. **OtwÃ³rz przeglÄ…darkÄ™** i przejdÅº na adres:
+3. **Otw¨®rz przegl?dark?** i przejd? na adres:
    ```
    http://localhost:5000
    ```
 
-ğŸ“‚ Struktura katalogÃ³w
+?? Struktura katalog¨®w
 ```plaintext
 webscraper/
-â”œâ”€â”€ interface/          # Kod moduÅ‚u interfejsu (Flask)
-â”œâ”€â”€ engine/             # Kod moduÅ‚u silnika (FastAPI)
-â”œâ”€â”€ docker-compose.yml  # Konfiguracja Dockera
-â””â”€â”€ README.md           # Ten plik
+©À©¤©¤ interface/          # Kod modu?u interfejsu (Flask)
+©À©¤©¤ engine/             # Kod modu?u silnika (FastAPI)
+©À©¤©¤ docker-compose.yml  # Konfiguracja Dockera
+©¸©¤©¤ README.md           # Ten plik
 ```
